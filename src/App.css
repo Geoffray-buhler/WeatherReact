@@ -1,20 +1,11 @@
+@-webkit-keyframes rotate-center{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@keyframes rotate-center{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.App-body {
+  background-color: #1b1b1d;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -24,15 +15,24 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.Border-Custom {
+  border-bottom: solid;
+  border-color: #333946;
+  border-radius: 5rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.card{
+  color:#1b1b1d;
+  width: 12rem;
 }
+
+.iconBig{
+  width:10rem ;
+}
+
+.logo{
+  width: 120px;
+  height: 80px;
+}
+
+.rotate-center{-webkit-animation:rotate-center 2s linear infinite both;animation:rotate-center 2s linear infinite both}
