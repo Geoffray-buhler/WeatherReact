@@ -6,6 +6,7 @@ import Logocomp from './components/LogoComp';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { IWeatherData } from './model/WeatherData';
+import Particles from 'react-particles-js';
 
 interface AppState {
     CityOfName: string;
@@ -30,8 +31,9 @@ export default class App extends React.Component<{}, AppState> {
   };
 
   handleSearch = (CityOfName: string) => {
-      this.setState({CityOfName});
-      this.fetchInfo();
+      this.setState({CityOfName}, () => {
+        this.fetchInfo();
+      });
   }
 
   fetchInfo() {
@@ -62,6 +64,58 @@ export default class App extends React.Component<{}, AppState> {
           <SearchBar condition={this.state.weatherData} onSearch={this.handleSearch}></SearchBar>
           <InfoDBD condition={this.state.weatherData}></InfoDBD>
           <Logocomp></Logocomp>
+          <Particles className="Particles"
+            params={{
+              "particles": {
+                  "number": {
+                      "value": 1500,
+                      "density": {
+                          "enable": false
+                      }
+                  },
+                  "size": {
+                      "value": 2,
+                      "random": true,
+                      "anim": {
+                          "speed": 4,
+                          "size_min": 0.3
+                      }
+                  },
+                  "line_linked": {
+                      "enable": false
+                  },
+                  "move": {
+                      "random": true,
+                      "speed": 1,
+                      "direction": "top",
+                      "out_mode": "out"
+                  }
+              },
+              "interactivity": {
+                  "events": {
+                      "onhover": {
+                          "enable": false,
+                          "mode": "bubble"
+                      },
+                      "onclick": {
+                          "enable": false,
+                          "mode": "repulse"
+                      }
+                  },
+                  "modes": {
+                      "bubble": {
+                          "distance": 2500,
+                          "duration": 2,
+                          "size": 0,
+                          "opacity": 0
+                      },
+                      "repulse": {
+                          "distance": 400,
+                          "duration": 4
+                      }
+                  }
+              }
+          }} />
         </div>
       </div>
     )

@@ -1,6 +1,5 @@
 ﻿import React, { ChangeEvent, FormEvent } from 'react';
 import FormControl from 'react-bootstrap/FormControl';
-import Button from 'react-bootstrap/Button';
 import { IWeatherData } from '../model/WeatherData';
 
 interface SearchState {
@@ -18,9 +17,12 @@ class SearchBar extends React.Component<{ onSearch: any, condition: IWeatherData
   }
 
   handleSearch = (ev: any) => {
-    const cityName: string = this.state.CityOfName;
+    if(ev.key === 'Enter'){
+      ev.preventDefault();
+      const cityName: string = this.state.CityOfName;
 
-    this.props.onSearch(cityName);
+      this.props.onSearch(cityName);
+    }
   }
 
   render() {
@@ -28,8 +30,7 @@ class SearchBar extends React.Component<{ onSearch: any, condition: IWeatherData
       <div className="container">
         <div className="row">
           <div className="col-6 offset-3 d-flex">
-            <FormControl type="text" placeholder="Votre ville" value={this.state.CityOfName} onChange={(ev: any) => this.handleInputChange(ev)} className="mr-sm-2 bg-transparent" />
-            <Button onClick={this.handleSearch} variant="outline-info">OK</Button>
+            <FormControl type="text" placeholder="Votre ville" value={this.state.CityOfName} onKeyPress={this.handleSearch} onChange={(ev: any) => this.handleInputChange(ev)} className="mr-sm-2 bg-transparent" />
           </div>
         </div>
       </div>
