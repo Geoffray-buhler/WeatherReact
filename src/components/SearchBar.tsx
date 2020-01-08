@@ -30,7 +30,7 @@ class SearchBar extends React.Component<{ onSearch: any, condition: IWeatherData
       <div className="container">
         <div className="row">
           <div className="col-6 offset-3 d-flex">
-            <FormControl type="text" placeholder="Votre ville" value={this.state.CityOfName} onKeyPress={this.handleSearch} onChange={(ev: any) => this.handleInputChange(ev)} className="mr-sm-2 bg-transparent" />
+            <FormControl type="text" placeholder="Votre ville" value={this.state.CityOfName} onKeyPress={this.handleSearch} onChange={(ev: any) => this.handleInputChange(ev) } className="mr-sm-2 bg-transparent" />
           </div>
         </div>
       </div>

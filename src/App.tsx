@@ -73,8 +73,11 @@ export default class App extends React.Component<{}, AppState> {
                           "enable": false
                       }
                   },
+                  "color": {
+                    "value": "#FFD800"
+                  },
                   "size": {
-                      "value": 2,
+                      "value": 2.2,
                       "random": true,
                       "anim": {
                           "speed": 4,

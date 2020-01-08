@@ -2,6 +2,7 @@
 
 .App {
   text-align: center;
+  overflow: hidden;
 }
 
 .App-body {
@@ -37,11 +38,10 @@
 
 .Particles {
   pointer-events: none;
-  position: absolute;
-  top:0;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  color: rgb(255, 0, 0);
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
 } 
 
 .rotate-center{-webkit-animation:rotate-center 2s linear infinite both;animation:rotate-center 2s linear infinite both}
